@@ -5,6 +5,7 @@
 
 // Sets default values
 ABirdPawnBase::ABirdPawnBase()
+	: m_isJump(false)
 {
 	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
@@ -31,4 +32,12 @@ void ABirdPawnBase::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 }
+bool ABirdPawnBase::IsJump()
+{
+	return m_isJump;
+}
 
+void ABirdPawnBase::ToggleJump()
+{
+	m_isJump = !m_isJump;
+}

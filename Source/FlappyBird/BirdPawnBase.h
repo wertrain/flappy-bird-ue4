@@ -26,4 +26,13 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+public:
+	UFUNCTION(BlueprintCallable)
+	bool IsJump();
+
+	UFUNCTION(BlueprintCallable)
+	void ToggleJump();
+
+private:
+	bool m_isJump;
 };
